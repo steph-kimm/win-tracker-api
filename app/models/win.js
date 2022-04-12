@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const exampleSchema = new mongoose.Schema({
+const winSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -8,6 +8,10 @@ const exampleSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
+  },
+  date: {
+    type: Date,
+    required:true
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -18,4 +22,4 @@ const exampleSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Example', exampleSchema)
+module.exports = mongoose.model('Win', winSchema)

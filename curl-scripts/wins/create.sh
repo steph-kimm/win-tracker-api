@@ -1,7 +1,12 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/examples"
+URL_PATH="/wins"
+TOKEN="18fc9bb96055b02f83244b2e0b5960b0"
+DATE="2003-12-30"
+TITLE="My win"
+TEXT="my text"
+
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -9,9 +14,10 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "example": {
+    "win": {
+      "title": "'"${TITLE}"'",
       "text": "'"${TEXT}"'",
-      "title": "'"${TITLE}"'"
+      "date": "'"${DATE}"'"
     }
   }'
 

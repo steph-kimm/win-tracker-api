@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 // require route files
-const exampleRoutes = require('./app/routes/example_routes')
+const winRoutes = require('./app/routes/win_routes')
 const userRoutes = require('./app/routes/user_routes')
 
 // require middleware
@@ -56,37 +56,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
-app.use(exampleRoutes)
+app.use(winRoutes)
 app.use(userRoutes)
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
 // passed any error messages from them
 app.use(errorHandler)
-
-
-
-// My CODE starts here 
-
-//when something is posted to wins
-app.post('/wins' , (req,res)=>{
-  res.send("Posted!")
-})
-
-
-
-// MY CODE ends here 
-
-
-
-
-
-
-
-
-
-
-
 
 
 // run API on designated port (4741 in this case)
